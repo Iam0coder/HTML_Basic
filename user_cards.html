@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки пользователей</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .card {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #fff;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Photo">
+        <h3>Иван Иванов</h3>
+        <p>Email: ivan.ivanov@example.com</p>
+        <p>Дата рождения: 01.01.1990</p>
+        <p>Город: Москва</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="User Photo">
+        <h3>Мария Петрова</h3>
+        <p>Email: maria.petrova@example.com</p>
+        <p>Дата рождения: 02.02.1985</p>
+        <p>Город: Санкт-Петербург</p>
+    </div>
+
+    <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="User Photo">
+        <h3>Алексей Смирнов</h3>
+        <p>Email: alexey.smirnov@example.com</p>
+        <p>Дата рождения: 03.03.1980</p>
+        <p>Город: Новосибирск</p>
+    </div>
+</div>
+
+</body>
+</html>
