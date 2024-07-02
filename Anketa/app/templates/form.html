@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}User Form{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Заполните анкету</h2>
+<form method="POST" action="/" class="needs-validation" novalidate>
+    <div class="mb-3">
+        <label for="name" class="form-label">Имя:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+        <div class="invalid-feedback">
+            Пожалуйста, введите ваше имя.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label">Город:</label>
+        <input type="text" class="form-control" id="city" name="city" required>
+        <div class="invalid-feedback">
+            Пожалуйста, введите ваш город.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Возраст:</label>
+        <input type="number" class="form-control" id="age" name="age" required>
+        <div class="invalid-feedback">
+            Пожалуйста, введите ваш возраст.
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="hobby" class="form-label">Хобби:</label>
+        <input type="text" class="form-control" id="hobby" name="hobby" required>
+        <div class="invalid-feedback">
+            Пожалуйста, введите ваше хобби.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+<hr>
+{% if user %}
+<h2>Информация о пользователе</h2>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ user.name }}</h5>
+        <p class="card-text"><strong>Город:</strong> {{ user.city }}</p>
+        <p class="card-text"><strong>Возраст:</strong> {{ user.age }}</p>
+        <p class="card-text"><strong>Хобби:</strong> {{ user.hobby }}</p>
+    </div>
+</div>
+{% endif %}
+<script>
+    // Bootstrap form validation
+    (function () {
+        'use strict'
+
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>
+{% endblock %}
